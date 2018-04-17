@@ -5,19 +5,20 @@ import "./Nav.css";
 
 function Nav() {
   return (
+    
     <nav className="navbar">
-      {/* <Hamburger /> */}
+      <Hamburger />
       <Link to="/">
-        <div>M'O'W</div>
+        <div className="navtext">M'O'W</div>
       </Link>
       <Link to="/products">
-        <div>Products</div>
+        <div className="navtext">Products</div>
       </Link>
       <Link to="/about">
-        <div>About</div>
+        <div className="navtext">About</div>
       </Link>
       <Link to="/contact">
-        <div>Contact</div>
+        <div className="navtext">Contact</div>
       </Link>
     </nav>
   );

@@ -9,7 +9,8 @@ module.exports = {
     //   description,
     //   price
     // } = req.body;
-
+    // console.log(req);
+    
     dbInstance
       .get_products()
       .then(response => {
