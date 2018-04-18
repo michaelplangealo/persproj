@@ -1,0 +1,24 @@
+.products-container {
+  margin: auto 0;
+  height: 40vh;
+  width: 100%;
+  display: grid;
+  color: transparent;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-gap: 20px;
+  justify-content: center;
+}
+
+.products-cards {
+  margin: 5px;
+  border-radius: 7px;
+  width: 80%;
+  height: 80%;
+  color: black;
+  margin: auto 0;
+  /* background: red; */
+}
+.products-image {
+  width: 100%;
+  height: 80%;
+}

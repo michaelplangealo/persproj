@@ -6,6 +6,7 @@ import Landing from "./components/Landing/Landing";
 import Products from "./components/Products/Products";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
+import ProductPage from "./components/ProductPage/ProductPage";
 
 export default (
   <Switch>
@@ -13,5 +14,6 @@ export default (
     <Route path="/products" component={Products} />
     <Route path="/about" component={About} />
     <Route path="/contact" component={Contact} />
+    <Route path="/product/:id" component={ProductPage} />
   </Switch>
 );

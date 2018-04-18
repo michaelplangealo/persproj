@@ -2,6 +2,7 @@ module.exports = {
   getProducts: (req, res, next) => {
     const dbInstance = req.app.get("db");
     // const {
+    //   id,
     //   name,
     //   firstimg,
     //   secondimg,
@@ -10,11 +11,22 @@ module.exports = {
     //   price
     // } = req.body;
     // console.log(req);
-    
+    // console.log(req.params);
+
     dbInstance
-      .get_products()
+      .getProducts()
       .then(response => {
-        console.log(response);
+        // console.log(response);
+        res.status(200).json(response);
+      })
+      .catch(console.log);
+  },
+  getOneProduct: (req, res, next) => {
+    const dbInstance = req.app.get("db");
+
+    dbInstance
+      .getProductById([req.params.id])
+      .then(response => {
         res.status(200).json(response);
       })
       .catch(console.log);

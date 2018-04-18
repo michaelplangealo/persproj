@@ -3,10 +3,11 @@ require("dotenv").config();
 const express = require("express");
 const { json } = require("body-parser");
 const cors = require("cors");
-const session = require("express-sessions");
+const session = require("express-session");
 const massive = require("massive");
-const app = express();
 const cntrl = require("./productsCntrl");
+const passport = require("passport");
+const { strategy } = require(`${__dirname}/loginCntrl.js`);
 
 // db connection
 // console.log(process.env.CONNECTION_STRING);
@@ -17,12 +18,66 @@ massive(process.env.CONNECTION_STRING)
   })
   .catch(console.log);
 
+const app = express();
+
+// session creation
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 100000
+    }
+  })
+);
+
 // middleware
 app.use(json());
 app.use(cors());
 
-// endpoints
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(strategy);
+
+passport.serializeUser((user, done) => {
+  console.log(user);
+
+  app
+    .get("db")
+    .getCustomer(user.id)
+    .then(response => {
+      if (!response[0]) {
+        app
+          .get("db")
+          .addCustomer([user.displayName, user.id])
+          .then(res => {
+            return done(null, res[0]);
+          })
+          .catch(err => console.log(err));
+      } else {
+        return done(null, response[0]);
+      }
+    })
+    .catch(err => console.log(err));
+});
+
+passport.deserializeUser((user, done) => {
+  done(null, user);
+});
+
+// authentication endpoints
+app.get(
+  `/login`,
+  passport.authenticate(`auth0`, {
+    successRedirect: `http://localhost:3000/#/`,
+    failureRedirect: "http://localhost:3005/login"
+  })
+);
+
+// interface endpoints
 app.get(`/api/products`, cntrl.getProducts);
+app.get(`/api/product/:id`, cntrl.getOneProduct);
 
 // listening
 const port = process.env.PORT || 3005;
