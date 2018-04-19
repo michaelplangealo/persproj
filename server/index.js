@@ -42,7 +42,7 @@ app.use(passport.session());
 passport.use(strategy);
 
 passport.serializeUser((user, done) => {
-  console.log(user);
+  // console.log(user);
 
   app
     .get("db")
@@ -82,7 +82,7 @@ app.get(`/api/products/:id`, prodCntrl.getOneProduct);
 
 // cart endpoints
 app.get(`/api/cart`, cartCntrl.getCart);
-app.get(`/api/cart/:id`, cartCntrl.addToCart);
+app.post(`/api/cart/:id`, cartCntrl.addToCart);
 
 // listening
 const port = process.env.PORT || 3005;

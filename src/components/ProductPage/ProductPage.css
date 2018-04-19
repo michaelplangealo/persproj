@@ -1,0 +1,20 @@
+.product {
+  display: flex;
+  flex-direction: row;
+}
+.products-img-container {
+  width: 860px;
+  height: 840px;
+  /* background-color: #eee; */
+  overflow: scroll;
+}
+.product-page-image {
+  width: 840px;
+  height: 840px;
+}
+.product-description {
+  /* position: fixed; */
+  padding: 20px;
+  width: 382px;
+  height: 933px;
+}

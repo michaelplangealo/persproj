@@ -14,6 +14,7 @@ class Products extends Component {
   }
   render() {
     const { products } = this.props;
+
     const productsList = products.map((e, i) => (
       <div key={e.id} className="products-cards">
         <Link to={`/product/${e.id}`}>

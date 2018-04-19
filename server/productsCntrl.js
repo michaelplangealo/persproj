@@ -16,7 +16,7 @@ module.exports = {
     dbInstance
       .getProducts()
       .then(response => {
-        console.log(req.body);
+        // console.log(req.body);
         res.status(200).json(response);
       })
       .catch(err => res.status(500).json(err));
@@ -28,6 +28,8 @@ module.exports = {
     dbInstance
       .getProductById([req.params.id])
       .then(response => {
+        // console.log(req.params.id);
+
         res.status(200).json(response);
       })
       .catch(err => res.status(500).json(err));

@@ -1,4 +1,4 @@
 INSERT INTO shoppingcart
-    (product_id, customer_id)
+    (customer_id, product_id)
 VALUES
-    ($1, $2)
+    ($2, $1)

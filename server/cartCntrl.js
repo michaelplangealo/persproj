@@ -8,10 +8,10 @@ module.exports = {
   },
   addToCart: (req, res, next) => {
     const dbInstance = req.app.get("db");
-
+    // console.log(req.user);
     dbInstance
-      .addToCart([req.user.id, req.params.id])
-      .then(response => getCart(req, res))
+      .addToCart([req.params.id, req.user.id])
+      .then(response => res.status(200).json(response))
       .catch(err => res.status(500).json(err));
   }
 };
