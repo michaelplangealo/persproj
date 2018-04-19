@@ -3,7 +3,7 @@ import axios from "axios";
 // initial state
 const initialState = {
   products: [],
-  currentProduct: {}
+  currentProduct: []
 };
 
 // action types

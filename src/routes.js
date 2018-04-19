@@ -7,6 +7,7 @@ import Products from "./components/Products/Products";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import ProductPage from "./components/ProductPage/ProductPage";
+import Cart from "./components/Cart/Cart";
 
 export default (
   <Switch>
@@ -15,5 +16,6 @@ export default (
     <Route path="/about" component={About} />
     <Route path="/contact" component={Contact} />
     <Route path="/product/:id" component={ProductPage} />
+    <Route path="/cart" component={Cart} />
   </Switch>
 );

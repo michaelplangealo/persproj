@@ -16,19 +16,20 @@ module.exports = {
     dbInstance
       .getProducts()
       .then(response => {
-        // console.log(response);
+        console.log(req.body);
         res.status(200).json(response);
       })
-      .catch(console.log);
+      .catch(err => res.status(500).json(err));
   },
   getOneProduct: (req, res, next) => {
     const dbInstance = req.app.get("db");
+    // console.log(req.params.id);
 
     dbInstance
       .getProductById([req.params.id])
       .then(response => {
         res.status(200).json(response);
       })
-      .catch(console.log);
+      .catch(err => res.status(500).json(err));
   }
 };

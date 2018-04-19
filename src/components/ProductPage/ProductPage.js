@@ -11,7 +11,22 @@ class ProductPage extends Component {
     this.props.getOneProduct(this.props.match.params.id);
   }
   render() {
-    return <div />;
+    const { currentProduct } = this.props;
+    const selectedProduct = currentProduct.map((e, i) => (
+      <div key={e.id} className="products-cards">
+        <h1>{e.name}</h1>
+        <h2>{e.price}</h2>
+        <h3>{e.description}</h3>
+        <img src={e.firstimg} className="products-image" />
+        <img src={e.secondimg} className="products-image" />
+        <img src={e.thirdimg} className="products-image" />
+      </div>
+    ));
+    return (
+      <section>
+        <div>{selectedProduct}</div>
+      </section>
+    );
   }
 }
 

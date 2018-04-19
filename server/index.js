@@ -5,7 +5,8 @@ const { json } = require("body-parser");
 const cors = require("cors");
 const session = require("express-session");
 const massive = require("massive");
-const cntrl = require("./productsCntrl");
+const prodCntrl = require("./productsCntrl");
+const cartCntrl = require("./cartCntrl");
 const passport = require("passport");
 const { strategy } = require(`${__dirname}/loginCntrl.js`);
 
@@ -75,9 +76,13 @@ app.get(
   })
 );
 
-// interface endpoints
-app.get(`/api/products`, cntrl.getProducts);
-app.get(`/api/product/:id`, cntrl.getOneProduct);
+// products endpoints
+app.get(`/api/products`, prodCntrl.getProducts);
+app.get(`/api/products/:id`, prodCntrl.getOneProduct);
+
+// cart endpoints
+app.get(`/api/cart`, cartCntrl.getCart);
+app.get(`/api/cart/:id`, cartCntrl.addToCart);
 
 // listening
 const port = process.env.PORT || 3005;
