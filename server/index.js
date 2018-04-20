@@ -83,6 +83,7 @@ app.get(`/api/products/:id`, prodCntrl.getOneProduct);
 // cart endpoints
 app.get(`/api/cart`, cartCntrl.getCart);
 app.post(`/api/cart/:id`, cartCntrl.addToCart);
+app.delete(`/api/cart/:id`, cartCntrl.deleteFromCart);
 
 // listening
 const port = process.env.PORT || 3005;
