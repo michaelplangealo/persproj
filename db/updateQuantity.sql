@@ -1,0 +1,1 @@
+UPDATE shoppingcart SET quantity = $3 WHERE product_id = $1 AND customer_id = $2;

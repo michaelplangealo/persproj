@@ -1,23 +1,35 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getOneProduct } from "../../ducks/productsReducer";
-import { addToCart } from "../../ducks/cartReducer";
+import { addToCart, updateCart } from "../../ducks/cartReducer";
 import "./ProductPage.css";
 
 class ProductPage extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      quantity: 1
+    };
     this.addToCart = this.addToCart.bind(this);
   }
   componentDidMount(id) {
     this.props.getOneProduct(this.props.match.params.id);
   }
-  addToCart(id) {
-    this.props.addToCart(id);
+  addToCart(id, quantity) {
+    this.props.addToCart(id, quantity);
     // console.log("Hit");
+  }
+  toIncrement() {
+    this.setState({ quantity: ++this.state.quantity });
+    // console.log(this.state.quantity);
+  }
+  toDecrement() {
+    this.setState({ quantity: --this.state.quantity });
+    // console.log(this.state.quantity);
   }
 
   render() {
+    const { quantity } = this.state;
     const { currentProduct } = this.props;
     const { addToCart } = this.props;
     const selectedProduct = currentProduct.map((e, i) => (
@@ -31,7 +43,19 @@ class ProductPage extends Component {
           <h1>{e.name}</h1>
           <h2>{e.price}</h2>
           <h3>{e.description}</h3>
-          <button onClick={() => this.addToCart(e.id)}>Gimme Dat Shit</button>
+          <div>
+            <button
+              onClick={() => this.toDecrement()}
+              disabled={quantity < 1 ? true : false}
+            >
+              -
+            </button>
+            <h4>{quantity}</h4>
+            <button onClick={() => this.toIncrement()}>+</button>
+            <button onClick={() => this.addToCart(e.id, quantity)}>
+              Gimme Dat
+            </button>
+          </div>
         </div>
       </div>
     ));
@@ -50,6 +74,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { getOneProduct, addToCart })(
-  ProductPage
-);
+export default connect(mapStateToProps, {
+  getOneProduct,
+  addToCart,
+  updateCart
+})(ProductPage);
