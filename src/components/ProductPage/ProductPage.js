@@ -53,7 +53,7 @@ class ProductPage extends Component {
             <h4>{quantity}</h4>
             <button onClick={() => this.toIncrement()}>+</button>
             <button onClick={() => this.addToCart(e.id, quantity)}>
-              Gimme Dat
+              Gimme Dat Shit
             </button>
           </div>
         </div>
