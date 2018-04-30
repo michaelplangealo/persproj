@@ -8,6 +8,7 @@ import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import ProductPage from "./components/ProductPage/ProductPage";
 import Cart from "./components/Cart/Cart";
+import Login from "./components/Login/Login.js";
 
 export default (
   <Switch>
@@ -17,5 +18,6 @@ export default (
     <Route path="/contact" component={Contact} />
     <Route path="/product/:id" component={ProductPage} />
     <Route path="/cart" component={Cart} />
+    <Route path="/login" component={Login} />
   </Switch>
 );

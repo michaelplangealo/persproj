@@ -65,7 +65,7 @@ export default function cartReducer(state = initialState, action) {
     case `${GET_CART_TOTAL}_FULFILLED`:
       let total = 0;
       action.payload.data.map((e, i) => {
-        total += Number(e.price.slice(1));
+        total += Number(e.price.slice(1)) * e.quantity;
       });
       console.log("TOTAL: ", total);
       return Object.assign({}, state, { total: total });

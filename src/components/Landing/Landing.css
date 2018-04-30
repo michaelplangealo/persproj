@@ -3,14 +3,17 @@
     height:100%;
 } */
 
-.videobox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.videobox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 
-#squiddy{
-    min-width: 10vh;
-    min-height: 10vh;
+#squiddy {
+  min-width: 10vh;
+  min-height: 10vh;
+  width: 70%;
+  height: 80%;
 }
-

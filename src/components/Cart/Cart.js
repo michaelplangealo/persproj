@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getCart, deleteFromCart, getCartTotal } from "../../ducks/cartReducer";
 import "./Cart.css";
+import Checkout from "../../Checkout";
 
 class Cart extends Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class Cart extends Component {
     let tax = total * 0.08125;
     // tax = tax.toFixed(2);
     let finalTotal = total + tax;
-    // finalTotal = finalTotal.toFixed(2);
+    finalTotal = finalTotal.toFixed(2);
     const activeCart = cart.map((e, i) => (
       <div key={e.id} className="cart-items">
         <img src={e.firstimg} className="cart-image" />
@@ -52,9 +53,16 @@ class Cart extends Component {
             <div>There is nothing in your cart</div>
           )}
         </section>
-        <div className="total-box">Total: {total}</div>
-        <div className="tax-box">Tax:{tax}</div>
-        <div className="final-total">Final total:{finalTotal}</div>
+        <div className="total-box">Total: ${total}</div>
+        <div className="tax-box">Tax:${tax.toFixed(2)}</div>
+        <div className="final-total">Final total:${finalTotal}</div>
+        <p>
+          <Checkout
+            name={"The Road to learn React"}
+            description={"Only the Book"}
+            amount={finalTotal}
+          />
+        </p>
       </div>
     );
   }

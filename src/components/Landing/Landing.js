@@ -1,6 +1,7 @@
 import React from "react";
 import squid from "./squiddy.jpg";
 import squiddy from "./squiddyviddy.mp4";
+import "./Landing.css";
 
 function Landing() {
   return (

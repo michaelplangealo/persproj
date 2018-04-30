@@ -9,9 +9,12 @@ const prodCntrl = require("./productsCntrl");
 const cartCntrl = require("./cartCntrl");
 const passport = require("passport");
 const { strategy } = require(`${__dirname}/loginCntrl.js`);
+// stripe requirements
+const SERVER_CONFIGS = require(`${__dirname}/constants/server`);
+const configureServer = require(`./server`);
+const configureRoutes = require(`./routes`);
 
 // db connection
-// console.log(process.env.CONNECTION_STRING);
 massive(process.env.CONNECTION_STRING)
   .then(dbInstance => {
     // console.log(dbInstance);
@@ -40,6 +43,8 @@ app.use(cors());
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(strategy);
+configureServer(app);
+configureRoutes(app);
 
 passport.serializeUser((user, done) => {
   // console.log(user);
