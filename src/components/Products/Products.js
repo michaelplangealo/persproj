@@ -24,7 +24,9 @@ class Products extends Component {
     ));
     return (
       <section>
-        <div className="products-container">{productsList}</div>
+        <div className="products-page">
+          <div className="products-container">{productsList}</div>
+        </div>
       </section>
     );
   }

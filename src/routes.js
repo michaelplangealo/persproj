@@ -18,6 +18,6 @@ export default (
     <Route path="/contact" component={Contact} />
     <Route path="/product/:id" component={ProductPage} />
     <Route path="/cart" component={Cart} />
-    <Route path="/login" component={Login} />
+    {/* <Route path="/login" component={Login} /> */}
   </Switch>
 );

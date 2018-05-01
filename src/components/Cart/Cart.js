@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getCart, deleteFromCart, getCartTotal } from "../../ducks/cartReducer";
 import "./Cart.css";
+import { Link } from "react-router-dom";
 import Checkout from "../../Checkout";
+import RaisedButton from "material-ui/RaisedButton";
 
 class Cart extends Component {
   constructor(props) {
@@ -46,23 +48,32 @@ class Cart extends Component {
     ));
     return (
       <div>
-        <section className="cart-page">
+        <section className="no-cart">
           {activeCart[0] ? (
             activeCart
           ) : (
-            <div>There is nothing in your cart</div>
+            <div>
+              <div>your cart is empty.</div>
+              <Link to="/products">
+                <div>
+                  <RaisedButton label="let's fix that." />
+                </div>
+              </Link>
+            </div>
           )}
         </section>
-        <div className="total-box">Total: ${total}</div>
-        <div className="tax-box">Tax:${tax.toFixed(2)}</div>
-        <div className="final-total">Final total:${finalTotal}</div>
-        <p>
-          <Checkout
-            name={"The Road to learn React"}
-            description={"Only the Book"}
-            amount={finalTotal}
-          />
-        </p>
+        <div className="checkout-box">
+          <div className="total-box">total: ${total}</div>
+          <div className="tax-box">tax: ${tax.toFixed(2)}</div>
+          <div className="final-total">final total: ${finalTotal}</div>
+          <p>
+            <Checkout
+              name={"SWAAAAAGGGEEERRRRRR"}
+              description={"Who needs to pay rent when you have clothes"}
+              amount={finalTotal}
+            />
+          </p>
+        </div>
       </div>
     );
   }

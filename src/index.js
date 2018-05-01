@@ -5,12 +5,15 @@ import App from "./App";
 import { HashRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
-  </Provider>,
+  <MuiThemeProvider>
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
+  </MuiThemeProvider>,
   document.getElementById("root")
 );
