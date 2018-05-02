@@ -1,26 +1,32 @@
 .about-page {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
 }
 
 .about-text-box {
   width: 50%;
-  height: 100vh;
-  /* background-color: #eee; */
-  overflow: scroll;
+  height: 80vh;
+  /* background-color: limegreen; */
 }
 .actual-about {
-  width: 100%;
-  height: 50vh;
+  width: 80%;
+  height: 70vh;
+  /* background-color: lightblue; */
+  margin: 70px;
+  margin-right: 100px;
+  overflow: scroll;
 }
 .next2u {
   /* position: fixed; */
   /* padding: 20px; */
   width: 50%;
-  height: 90vh;
+  /* height: 90vh; */
+  /* background-color: hotpink; */
 }
 #purpp {
   width: 100%;
-  height: 90vh;
+  height: 80vh;
   transform: rotate(90deg);
 }
