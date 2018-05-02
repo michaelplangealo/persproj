@@ -14,10 +14,14 @@ class Cart extends Component {
       tax: 0,
       finalTotal: 0
     };
+    this.handleTax = this.handleTax.bind(this);
   }
   componentDidMount(id) {
     this.props.getCart(this.props.match.params.id);
-    this.props.getCartTotal();
+    this.props
+      .getCartTotal()
+      .then(() => this.handleTax(this.props.total))
+      .then(() => this.handleFinalTotal(this.state.tax));
     // use a .then
   }
 
@@ -39,10 +43,10 @@ class Cart extends Component {
     // console.log(this.props.total, this.state.finalTotal);
     console.log(this.props.cart);
     const { cart, total } = this.props;
-    let tax = total * 0.08125;
+    // let tax = total * 0.08125;
     // tax = tax.toFixed(2);
-    let finalTotal = total + tax;
-    finalTotal = finalTotal.toFixed(2);
+    // let finalTotal = total + tax;
+    // finalTotal = finalTotal.toFixed(2);
     const activeCart = cart.map((e, i) => (
       <div key={i} className="cart-items">
         <img src={e.firstimg} className="cart-image" />
@@ -74,13 +78,15 @@ class Cart extends Component {
         </section>
         <div className="checkout-box">
           <div className="total-box">total: ${total}</div>
-          <div className="tax-box">tax: ${tax.toFixed(2)}</div>
-          <div className="final-total">final total: ${finalTotal}</div>
+          <div className="tax-box">tax: ${this.state.tax.toFixed(2)}</div>
+          <div className="final-total">
+            final total: ${this.state.finalTotal}
+          </div>
           <p>
             <Checkout
               name={"SWAAAAAGGGEEERRRRRR"}
               description={"Who needs to pay rent when you have clothes"}
-              amount={finalTotal}
+              amount={this.state.finalTotal}
             />
           </p>
         </div>

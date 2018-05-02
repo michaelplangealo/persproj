@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getProducts } from "../../ducks/productsReducer";
+import { getCart } from "../../ducks/cartReducer.js";
+
 import "./Products.css";
 import { Link } from "react-router-dom";
 
@@ -10,10 +12,10 @@ class Products extends Component {
   }
   componentDidMount() {
     this.props.getProducts();
+    this.props.getCart();
     // console.log(this.props);
   }
 
- 
   render() {
     const { products } = this.props;
 
@@ -35,10 +37,11 @@ class Products extends Component {
 }
 
 function mapStateToProps(state) {
-  const { productsReducer } = state;
+  const { productsReducer, cartReducer } = state;
   return {
-    ...productsReducer
+    ...productsReducer,
+    ...cartReducer
   };
 }
 
-export default connect(mapStateToProps, { getProducts })(Products);
+export default connect(mapStateToProps, { getProducts, getCart })(Products);

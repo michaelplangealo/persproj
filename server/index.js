@@ -87,7 +87,6 @@ app.get(`/api/products/:id`, prodCntrl.getOneProduct);
 
 // cart endpoints
 app.get(`/api/cart`, cartCntrl.getCart);
-app.get(`/api/cart/:id`, cartCntrl.getCartItem);
 app.post(`/api/cart/`, cartCntrl.addToCart);
 app.delete(`/api/cart/:id`, cartCntrl.deleteFromCart);
 app.put(`/api/cart`, cartCntrl.updateCart);

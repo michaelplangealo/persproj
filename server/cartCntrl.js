@@ -32,11 +32,5 @@ module.exports = {
       .then(response => res.status(200).json(response))
       .catch(err => res.status(500).json(err));
   },
-  getCartItem: (req, res, next) => {
-    const dbInstance = req.app.get("db");
-    dbInstance
-      .getCartItem(req.params.id)
-      .then(response => res.status(200).json(response))
-      .catch(err => res.status(500).json(err));
-  }
+
 };
