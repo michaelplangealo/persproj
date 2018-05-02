@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getOneProduct } from "../../ducks/productsReducer";
-import { addToCart, updateCart } from "../../ducks/cartReducer";
+import { addToCart, updateCart, getCart } from "../../ducks/cartReducer";
 import "./ProductPage.css";
 
 class ProductPage extends Component {
@@ -15,12 +15,18 @@ class ProductPage extends Component {
   }
   componentDidMount(id) {
     this.setState({ loading: !this.state.loading });
+    this.props.getCart();
     this.props
       .getOneProduct(this.props.match.params.id)
       .then(() => this.setState({ loading: !this.state.loading }));
   }
   addToCart(id, quantity) {
-    this.props.addToCart(id, quantity);
+    let index = this.props.cart.findIndex(e => e.product_id == id);
+    if (index === -1) {
+      this.props.addToCart(id, quantity).then(() => this.props.getCart());
+    } else {
+      this.props.updateCart(id, quantity).then(() => this.props.getCart());
+    }
     // console.log("Hit");
   }
   toIncrement() {
@@ -78,14 +84,16 @@ class ProductPage extends Component {
 }
 
 function mapStateToProps(state) {
-  const { productsReducer } = state;
+  const { productsReducer, cartReducer } = state;
   return {
-    ...productsReducer
+    ...productsReducer,
+    ...cartReducer
   };
 }
 
 export default connect(mapStateToProps, {
   getOneProduct,
   addToCart,
-  updateCart
+  updateCart,
+  getCart
 })(ProductPage);

@@ -11,12 +11,14 @@ class Cart extends Component {
     super(props);
 
     this.state = {
-      // finalTotal: 0
+      tax: 0,
+      finalTotal: 0
     };
   }
   componentDidMount(id) {
     this.props.getCart(this.props.match.params.id);
     this.props.getCartTotal();
+    // use a .then
   }
 
   handleDelete(id) {
@@ -25,6 +27,12 @@ class Cart extends Component {
       console.log(res);
       this.props.getCart(this.props.match.params.id);
     });
+  }
+  handleTax(total) {
+    this.setState({ tax: this.props.total * 0.08125 });
+  }
+  handleFinalTotal(total) {
+    this.setState({ finalTotal: this.props.total + this.state.tax });
   }
 
   render() {
