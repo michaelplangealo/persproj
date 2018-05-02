@@ -58,7 +58,7 @@ class Hamburger extends Component {
 
         <div className="navlink-container">
           <Link className="navtext" to="/">
-            <div>m'o'w</div>
+            <div>man/of/war</div>
           </Link>
           <Link className="navtext" to="/cart">
             <div>Cart {this.props.cart.length || 0}</div>

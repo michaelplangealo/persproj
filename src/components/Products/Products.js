@@ -12,6 +12,8 @@ class Products extends Component {
     this.props.getProducts();
     // console.log(this.props);
   }
+
+ 
   render() {
     const { products } = this.props;
 

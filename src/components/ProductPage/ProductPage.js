@@ -8,12 +8,16 @@ class ProductPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quantity: 1
+      quantity: 1,
+      loading: false
     };
     this.addToCart = this.addToCart.bind(this);
   }
   componentDidMount(id) {
-    this.props.getOneProduct(this.props.match.params.id);
+    this.setState({ loading: !this.state.loading });
+    this.props
+      .getOneProduct(this.props.match.params.id)
+      .then(() => this.setState({ loading: !this.state.loading }));
   }
   addToCart(id, quantity) {
     this.props.addToCart(id, quantity);
@@ -35,9 +39,15 @@ class ProductPage extends Component {
     const selectedProduct = currentProduct.map((e, i) => (
       <div key={e.id} className="product">
         <div className="products-img-container">
-          <img src={e.firstimg} className="product-page-image" />
-          <img src={e.secondimg} className="product-page-image" />
-          <img src={e.thirdimg} className="product-page-image" />
+          {this.state.loading ? (
+            <p>Loading...</p>
+          ) : (
+            <div>
+              <img src={e.firstimg} className="product-page-image" />
+              <img src={e.secondimg} className="product-page-image" />
+              <img src={e.thirdimg} className="product-page-image" />
+            </div>
+          )}
         </div>
         <div className="product-description">
           <h1>{e.name}</h1>

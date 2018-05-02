@@ -1,0 +1,26 @@
+.about-page {
+  display: flex;
+  flex-direction: row;
+}
+
+.about-text-box {
+  width: 50%;
+  height: 100vh;
+  /* background-color: #eee; */
+  overflow: scroll;
+}
+.actual-about {
+  width: 100%;
+  height: 50vh;
+}
+.next2u {
+  /* position: fixed; */
+  /* padding: 20px; */
+  width: 50%;
+  height: 90vh;
+}
+#purpp {
+  width: 100%;
+  height: 90vh;
+  transform: rotate(90deg);
+}

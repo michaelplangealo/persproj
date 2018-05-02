@@ -20,6 +20,7 @@ class Cart extends Component {
   }
 
   handleDelete(id) {
+    console.log(id);
     this.props.deleteFromCart(id).then(res => {
       console.log(res);
       this.props.getCart(this.props.match.params.id);
@@ -28,13 +29,14 @@ class Cart extends Component {
 
   render() {
     // console.log(this.props.total, this.state.finalTotal);
+    console.log(this.props.cart);
     const { cart, total } = this.props;
     let tax = total * 0.08125;
     // tax = tax.toFixed(2);
     let finalTotal = total + tax;
     finalTotal = finalTotal.toFixed(2);
     const activeCart = cart.map((e, i) => (
-      <div key={e.id} className="cart-items">
+      <div key={i} className="cart-items">
         <img src={e.firstimg} className="cart-image" />
         <div className="deets">
           <p className="cart-item-desc">{e.name}</p>
