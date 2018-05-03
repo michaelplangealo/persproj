@@ -5,7 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import Landing from "./components/Landing/Landing";
 import Products from "./components/Products/Products";
 import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
+import Locations from "./components/Locations/Locations";
 import ProductPage from "./components/ProductPage/ProductPage";
 import Cart from "./components/Cart/Cart";
 import Login from "./components/Login/Login.js";
@@ -15,7 +15,7 @@ export default (
     <Route exact path="/" component={Landing} />
     <Route path="/products" component={Products} />
     <Route path="/about" component={About} />
-    <Route path="/contact" component={Contact} />
+    <Route path="/locations" component={Locations} />
     <Route path="/product/:id" component={ProductPage} />
     <Route path="/cart" component={Cart} />
     {/* <Route path="/login" component={Login} /> */}

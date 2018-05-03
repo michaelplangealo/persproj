@@ -3,9 +3,9 @@
   font-size: 18.4px;
   line-height: 50px;
   text-align: start;
-  font-weight: 200;
+  font-weight: 400;
   letter-spacing: normal;
-  font-family: "Karla", sans-serif;
+  font-family: "Yantramanav", sans-serif;
 }
 
 .menu-item1 {
@@ -40,7 +40,7 @@
 
 .navtext {
   margin: 0 25px;
-  font-family: "Karla", sans-serif;
+  font-family: "Yantramanav", sans-serif;
   text-decoration: none;
 }
 /* Position and sizing of burger button */

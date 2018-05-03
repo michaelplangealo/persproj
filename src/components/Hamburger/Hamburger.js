@@ -44,9 +44,9 @@ class Hamburger extends Component {
               about.
             </div>
           </Link>
-          <Link className="menu-link" to="/contact">
+          <Link className="menu-link" to="/locations">
             <div onClick={() => this.closeHamburger()} className="menu-item2">
-              contact.
+              locations.
             </div>
           </Link>
           <a href={process.env.REACT_APP_LOGIN} className="menu-link">
