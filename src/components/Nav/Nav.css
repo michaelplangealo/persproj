@@ -29,6 +29,9 @@
   padding: 20px;
   box-sizing: border-box;
 }
+.navtext {
+  font-weight: 300;
+}
 
 a {
   text-decoration: none;

@@ -61,8 +61,9 @@ class Nav extends Component {
           <Link className="navtext" to="/">
             man/of/war
           </Link>
+          ||
           <Link className="navtext" to="/cart">
-            cart {this.props.cart.length || 0}
+            <i class="fas fa-shopping-cart" /> {this.props.cart.length || 0}
           </Link>
         </div>
       </nav>
