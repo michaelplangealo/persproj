@@ -5,11 +5,10 @@
   text-align: start;
   font-weight: 400;
   letter-spacing: normal;
-  font-family: "Yantramanav", sans-serif;
 }
 
 .menu-item1 {
-  color: #30bced;
+  /* color: #30bced; */
 }
 
 .menu-item2 {
@@ -19,6 +18,8 @@
   text-decoration: none;
 }
 .navbar {
+  font-family: "Yantramanav", sans-serif;
+  font-weight: 100;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -40,7 +41,7 @@
 
 .navtext {
   margin: 0 25px;
-  font-family: "Yantramanav", sans-serif;
+  /* font-family: "Yantramanav", sans-serif; */
   text-decoration: none;
 }
 /* Position and sizing of burger button */

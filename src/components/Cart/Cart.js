@@ -26,7 +26,7 @@ class Cart extends Component {
   }
 
   handleDelete(id) {
-    console.log(id);
+    // console.log(id);
     this.props.deleteFromCart(id).then(res => {
       console.log(res);
       this.props.getCart(this.props.match.params.id);
