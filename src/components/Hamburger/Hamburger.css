@@ -12,7 +12,7 @@
 }
 
 .menu-item2 {
-  color: #fffaff;
+  /* color: #fffaff; */
 }
 .menu-link {
   text-decoration: none;
@@ -27,6 +27,8 @@
   background: none;
   height: 4vh;
   /* background: hotpink; */
+  border-bottom: 2px;
+  border-bottom-color: black;
   /* position: absolute; */
   /* border-bottom: 1px solid black; */
 }

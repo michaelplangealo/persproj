@@ -12,7 +12,7 @@ const { strategy } = require(`${__dirname}/loginCntrl.js`);
 // stripe requirements
 const SERVER_CONFIGS = require(`${__dirname}/constants/server`);
 const configureServer = require(`./server`);
-const configureRoutes = require(`./routes`);
+const configureRoutes = require(`./routes/index.js`);
 
 // db connection
 massive(process.env.CONNECTION_STRING)

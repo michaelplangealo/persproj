@@ -41,7 +41,7 @@ class Cart extends Component {
 
   render() {
     // console.log(this.props.total, this.state.finalTotal);
-    console.log(this.props.cart);
+    // console.log(this.props.cart);
     const { cart, total } = this.props;
     // let tax = total * 0.08125;
     // tax = tax.toFixed(2);
@@ -80,13 +80,13 @@ class Cart extends Component {
           <div className="total-box">total: ${total}</div>
           <div className="tax-box">tax: ${this.state.tax.toFixed(2)}</div>
           <div className="final-total">
-            final total: ${this.state.finalTotal}
+            final total: ${Number(this.state.finalTotal.toFixed(2))}
           </div>
           <p>
             <Checkout
               name={"SWAAAAAGGGEEERRRRRR"}
               description={"Who needs to pay rent when you have clothes"}
-              amount={this.state.finalTotal}
+              amount={Number(this.state.finalTotal.toFixed(2))}
             />
           </p>
         </div>

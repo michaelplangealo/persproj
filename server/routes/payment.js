@@ -1,6 +1,7 @@
 const stripe = require("../constants/stripe");
 
 const postStripeCharge = res => (stripeErr, stripeRes) => {
+  // console.log(stripeErr);
   if (stripeErr) {
     res.status(500).send({ error: stripeErr });
   } else {

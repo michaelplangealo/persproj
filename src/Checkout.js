@@ -7,7 +7,7 @@ import PAYMENT_SERVER_URL from "./constants/server";
 
 const CURRENCY = "USD";
 
-const fromEuroToCent = amount => amount * 100;
+const fromDollarToCent = amount => amount * 100;
 
 const successPayment = data => {
   alert("Payment Successful");
@@ -15,24 +15,28 @@ const successPayment = data => {
 
 const errorPayment = data => {
   alert("Payment Error");
+  // console.log(data);
 };
 
-const onToken = (amount, description) => token =>
+const onToken = (amount, description) => token => {
+  // console.log(amount, description);
+  // console.log(token);
   axios
     .post(PAYMENT_SERVER_URL, {
       description,
       source: token.id,
       currency: CURRENCY,
-      amount: fromEuroToCent(amount)
+      amount: fromDollarToCent(amount)
     })
     .then(successPayment)
     .catch(errorPayment);
+};
 
 const Checkout = ({ name, description, amount }) => (
   <StripeCheckout
     name={name}
     description={description}
-    amount={fromEuroToCent(amount)}
+    amount={fromDollarToCent(amount)}
     token={onToken(amount, description)}
     currency={CURRENCY}
     stripeKey={STRIPE_PUBLISHABLE}

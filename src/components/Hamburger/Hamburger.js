@@ -61,7 +61,7 @@ class Hamburger extends Component {
             <div>man/of/war</div>
           </Link>
           <Link className="navtext" to="/cart">
-            <div>Cart {this.props.cart.length || 0}</div>
+            <div>cart {this.props.cart.length || 0}</div>
           </Link>
         </div>
       </div>
