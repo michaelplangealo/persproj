@@ -1,8 +1,14 @@
 import React from "react";
 import "./Locations.css";
 import { DeviceLocationDisabled } from "material-ui";
+import CommunicationLocationOn from "material-ui/svg-icons/communication/location-on";
 
 function Locations() {
+  let styles = {
+    buttonColor: "black",
+    buttonHover: "gray",
+    buttonSize: "0 0 24 24"
+  };
   return (
     <div className="locations-page">
       <div className="title-bar">l o c a t i o n s.</div>
@@ -17,7 +23,11 @@ function Locations() {
             <div className="img-text"> DALLAS </div>
           </div>
           <div style={{ fontSize: "1.5em", color: "black" }}>
-            <i class="material-icons">place</i>
+            <CommunicationLocationOn
+              color={styles.buttonColor}
+              hoverColor={styles.buttonHover}
+              viewBox={styles.buttonSize}
+            />
           </div>
           <div className="address">500 S Ervay St, Dallas, TX 75201 </div>
           <hr className="diviline" />
@@ -40,7 +50,11 @@ function Locations() {
             <div className="img-text">ARLINGTON</div>
           </div>
           <div style={{ fontSize: "1.5em", color: "black" }}>
-            <i class="material-icons">place</i>
+            <CommunicationLocationOn
+              color={styles.buttonColor}
+              hoverColor={styles.buttonHover}
+              viewBox={styles.buttonSize}
+            />
           </div>
           <div className="address">
             6702 Prairie Fire Rd, Arlington, TX 76002
@@ -65,7 +79,11 @@ function Locations() {
             <div className="img-text">TORONTO</div>
           </div>
           <div style={{ fontSize: "1.5em", color: "black" }}>
-            <i class="material-icons">place</i>
+            <CommunicationLocationOn
+              color={styles.buttonColor}
+              hoverColor={styles.buttonHover}
+              viewBox={styles.buttonSize}
+            />
           </div>
           <div className="address">1364 Weston Rd, York, ON M6M 4R8</div>
           <hr className="diviline" />
@@ -88,7 +106,11 @@ function Locations() {
             <div className="img-text">AMSTERDAM</div>
           </div>
           <div style={{ fontSize: "1.5em", color: "black" }}>
-            <i class="material-icons">place</i>
+            <CommunicationLocationOn
+              color={styles.buttonColor}
+              hoverColor={styles.buttonHover}
+              viewBox={styles.buttonSize}
+            />
           </div>
           <div className="address">
             Herengracht 49, Amsterdam, Noord-Holland, 1015 BT
@@ -102,8 +124,6 @@ function Locations() {
             <div className="locations-piece"> PHONE :</div>
             <div className="locations-detail"> 333 . 333 . 3333</div>
           </div>
-          <div className="address" />
-          <div className="hours" />
         </div>
       </div>
     </div>

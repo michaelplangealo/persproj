@@ -3,7 +3,6 @@ import "./Hamburger.css";
 import { stack as Menu } from "react-burger-menu";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import cart from "./cart.png";
 
 class Hamburger extends Component {
   constructor(props) {
