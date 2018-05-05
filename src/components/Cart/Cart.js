@@ -62,13 +62,13 @@ class Cart extends Component {
     ));
     return (
       <div>
-        <section className="no-cart">
+        <section className="cart-page">
           {activeCart[0] ? (
             activeCart
           ) : (
-            <div>
+            <div className="no-cart-contents">
               <div>your cart is empty.</div>
-              <Link to="/products">
+              <Link className="link-to-products" to="/products">
                 <div>
                   <RaisedButton label="let's fix that." />
                 </div>

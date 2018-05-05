@@ -5,18 +5,20 @@
 }
 .title-bar {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  font-weight: 100;
   width: 100%;
   height: 10%;
   /* background-color: hotpink; */
 }
-.title {
-  height: 5vh;
-  width: 10vh;
-  font-weight: 500;
-  /* background-color: limegreen; */
+.title-line {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  width: 60%;
 }
 .wrapper {
   display: grid;
@@ -81,11 +83,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   width: 100px;
 }
-.locations-details-container {
-  /* padding-top: 20px;
-  width: 600px; */
-  /* border-top-style: solid; */
-}
+
 .locations-piece {
   font-size: 14px;
   /* text-align: center; */
@@ -102,4 +100,10 @@
 
 .locationimage {
   width: 100%;
+}
+.loc {
+  padding-left: 30px;
+}
+.lochome {
+  padding-right: 30px;
 }

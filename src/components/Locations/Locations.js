@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Locations.css";
 import { DeviceLocationDisabled } from "material-ui";
 import CommunicationLocationOn from "material-ui/svg-icons/communication/location-on";
@@ -11,7 +12,16 @@ function Locations() {
   };
   return (
     <div className="locations-page">
-      <div className="title-bar">l o c a t i o n s.</div>
+      <div className="title-bar">
+        <span>
+          <a className="lochome">
+            <Link to="/"> h o m e </Link>
+          </a>
+          /
+          <span className="loc">l o c a t i o n s .</span>
+        </span>
+        <hr className="title-line" />
+      </div>
       <div className="wrapper">
         <div className="box">
           <div className="img-container">
