@@ -4,6 +4,7 @@ import { getCart } from "../../ducks/cartReducer.js";
 import squid from "./squiddy.jpg";
 import squiddy from "./squiddyviddy.mp4";
 import "./Landing.css";
+import TestMap from "../TestMap/TestMap";
 
 class Landing extends Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class Landing extends Component {
         <video preload="auto" autoPlay loop id="squiddy">
           <source src={squiddy} type="video/mp4" />
         </video>
+        <TestMap />
       </div>
     );
   }

@@ -12,7 +12,7 @@ function About() {
             <Link to="/"> h o m e </Link>
           </a>
           /
-          <span className="loc">l o c a t i o n s .</span>
+          <span className="loc">a b o u t .</span>
         </span>
         <hr className="title-line" />
       </div>

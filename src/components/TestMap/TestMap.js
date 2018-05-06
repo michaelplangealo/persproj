@@ -5,8 +5,10 @@ import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 export class MapContainer extends Component {
   render() {
     const style = {
-      width: "20%"
+      width: "200px",
+      height: "200px"
     };
+    console.log(this.props.google);
     return (
       <Map
         google={this.props.google}
