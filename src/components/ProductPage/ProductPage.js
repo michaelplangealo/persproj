@@ -46,39 +46,41 @@ class ProductPage extends Component {
     const { quantity } = this.state;
     const { currentProduct } = this.props;
     const { addToCart } = this.props;
-    const selectedProduct = currentProduct.map((e, i) => (
-      <div key={e.id} className="product">
-        <div className="products-img-container">
-          {this.state.loading ? (
-            <p>Loading...</p>
-          ) : (
+    const selectedProduct = currentProduct.map((e, i) => {
+      return (
+        <div key={e.id} className="product">
+          <div className="products-img-container">
+            {this.state.loading ? (
+              <p>Loading...</p>
+            ) : (
+              <div>
+                <img src={e.firstimg} className="product-page-image" />
+                <img src={e.secondimg} className="product-page-image" />
+                <img src={e.thirdimg} className="product-page-image" />
+              </div>
+            )}
+          </div>
+          <div className="product-description">
+            <h1>{e.name}</h1>
+            <h2>{e.price}</h2>
+            <h3>{e.description}</h3>
             <div>
-              <img src={e.firstimg} className="product-page-image" />
-              <img src={e.secondimg} className="product-page-image" />
-              <img src={e.thirdimg} className="product-page-image" />
+              <button
+                onClick={() => this.toDecrement()}
+                disabled={quantity < 1 ? true : false}
+              >
+                -
+              </button>
+              <h4>{quantity}</h4>
+              <button onClick={() => this.toIncrement()}>+</button>
+              <button onClick={() => this.addToCart(e.id, quantity)}>
+                Gimme Dat Shit
+              </button>
             </div>
-          )}
-        </div>
-        <div className="product-description">
-          <h1>{e.name}</h1>
-          <h2>{e.price}</h2>
-          <h3>{e.description}</h3>
-          <div>
-            <button
-              onClick={() => this.toDecrement()}
-              disabled={quantity < 1 ? true : false}
-            >
-              -
-            </button>
-            <h4>{quantity}</h4>
-            <button onClick={() => this.toIncrement()}>+</button>
-            <button onClick={() => this.addToCart(e.id, quantity)}>
-              Gimme Dat Shit
-            </button>
           </div>
         </div>
-      </div>
-    ));
+      );
+    });
     return (
       <section>
         <div>{selectedProduct}</div>

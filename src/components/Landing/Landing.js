@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getCart } from "../../ducks/cartReducer.js";
-import squid from "./squiddy.jpg";
 import squiddy from "./squiddyviddy.mp4";
 import "./Landing.css";
 
