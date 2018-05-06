@@ -14,7 +14,10 @@ import {
   CardTitle,
   CardText
 } from "material-ui/Card";
-import TestMap from "../TestMap/TestMap";
+import DallasMap from "../Maps/DallasMap.js";
+import ArlingtonMap from "../Maps/ArlingtonMap.js";
+import TorontoMap from "../Maps/TorontoMap";
+import AmsterdamMap from "../Maps/AmsterdamnMap.js";
 
 class Locations extends Component {
   constructor(props) {
@@ -25,12 +28,24 @@ class Locations extends Component {
         buttonHover: "gray",
         buttonSize: "0 0 24 24",
         width: "20%",
-        expanded: false
+        expanded1: false,
+        expanded2: false,
+        expanded3: false,
+        expanded4: false
       }
     };
   }
+  handleExpandChange1 = expanded => {
+    this.setState({ expanded1: expanded });
+  };
   handleExpandChange = expanded => {
-    this.setState({ expanded: expanded });
+    this.setState({ expanded2: expanded });
+  };
+  handleExpandChange3 = expanded => {
+    this.setState({ expanded3: expanded });
+  };
+  handleExpandChange4 = expanded => {
+    this.setState({ expanded4: expanded });
   };
   render() {
     var { styles } = this.state;
@@ -39,7 +54,7 @@ class Locations extends Component {
         <div className="title-bar">
           <span>
             <span className="lochome">
-              <Link to="/"> h o m e </Link>
+              <Link to="/"> h o m e .</Link>
             </span>
             /
             <span className="loc">l o c a t i o n s .</span>
@@ -58,7 +73,7 @@ class Locations extends Component {
             </div>
             <Card
               expanded={this.state.expanded}
-              onExpandChange={this.handleExpandChange}
+              onExpandChange={this.handleExpandChange1}
             >
               <CardHeader
                 actAsExpander={true}
@@ -76,10 +91,9 @@ class Locations extends Component {
 
               <CardText expandable={true}>
                 <div className="map-container">
-                  <TestMap />
+                  <DallasMap />
                 </div>
               </CardText>
-              {/* <CardMedia expandable={true} /> */}
             </Card>
             <div className="address">500 S Ervay St, Dallas, TX 75201 </div>
             <hr className="diviline" />
@@ -101,13 +115,29 @@ class Locations extends Component {
               <div className="overlay" />
               <div className="img-text">ARLINGTON</div>
             </div>
-            <div style={{ fontSize: "1.5em", color: "black" }}>
-              <CommunicationLocationOn
-                color={styles.buttonColor}
-                hoverColor={styles.buttonHover}
-                viewBox={styles.buttonSize}
+            <Card
+              expanded={this.state.expanded}
+              onExpandChange={this.handleExpandChange}
+            >
+              <CardHeader
+                actAsExpander={true}
+                showExpandableButton={true}
+                children={
+                  <div style={{ fontSize: "1.5em", color: "black" }}>
+                    <CommunicationLocationOn
+                      color={styles.buttonColor}
+                      hoverColor={styles.buttonHover}
+                      viewBox={styles.buttonSize}
+                    />
+                  </div>
+                }
               />
-            </div>
+              <CardText expandable={true}>
+                <div className="map-container">
+                  <ArlingtonMap />
+                </div>
+              </CardText>
+            </Card>
             <div className="address">
               6702 Prairie Fire Rd, Arlington, TX 76002
             </div>
@@ -130,13 +160,30 @@ class Locations extends Component {
               <div className="overlay" />
               <div className="img-text">TORONTO</div>
             </div>
-            <div style={{ fontSize: "1.5em", color: "black" }}>
-              <CommunicationLocationOn
-                color={styles.buttonColor}
-                hoverColor={styles.buttonHover}
-                viewBox={styles.buttonSize}
+            <Card
+              expanded={this.state.expanded3}
+              onExpandChange={this.handleExpandChange3}
+            >
+              <CardHeader
+                actAsExpander={true}
+                showExpandableButton={true}
+                children={
+                  <div style={{ fontSize: "1.5em", color: "black" }}>
+                    <CommunicationLocationOn
+                      color={styles.buttonColor}
+                      hoverColor={styles.buttonHover}
+                      viewBox={styles.buttonSize}
+                    />
+                  </div>
+                }
               />
-            </div>
+
+              <CardText expandable={true}>
+                <div className="map-container">
+                  <TorontoMap />
+                </div>
+              </CardText>
+            </Card>
             <div className="address">1364 Weston Rd, York, ON M6M 4R8</div>
             <hr className="diviline" />
             <div className="locations-details-container">
@@ -157,13 +204,30 @@ class Locations extends Component {
               <div className="overlay" />
               <div className="img-text">AMSTERDAM</div>
             </div>
-            <div style={{ fontSize: "1.5em", color: "black" }}>
-              <CommunicationLocationOn
-                color={styles.buttonColor}
-                hoverColor={styles.buttonHover}
-                viewBox={styles.buttonSize}
+            <Card
+              expanded={this.state.expanded4}
+              onExpandChange={this.handleExpandChange4}
+            >
+              <CardHeader
+                actAsExpander={true}
+                showExpandableButton={true}
+                children={
+                  <div style={{ fontSize: "1.5em", color: "black" }}>
+                    <CommunicationLocationOn
+                      color={styles.buttonColor}
+                      hoverColor={styles.buttonHover}
+                      viewBox={styles.buttonSize}
+                    />
+                  </div>
+                }
               />
-            </div>
+
+              <CardText expandable={true}>
+                <div className="map-container">
+                  <AmsterdamMap />
+                </div>
+              </CardText>
+            </Card>
             <div className="address">
               Herengracht 49, Amsterdam, Noord-Holland, 1015 BT
             </div>

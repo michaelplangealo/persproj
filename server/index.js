@@ -84,6 +84,7 @@ app.get(
 // products endpoints
 app.get(`/api/products`, prodCntrl.getProducts);
 app.get(`/api/products/:id`, prodCntrl.getOneProduct);
+app.get(`/api/products`, prodCntrl.filterProduct);
 
 // cart endpoints
 app.get(`/api/cart`, cartCntrl.getCart);

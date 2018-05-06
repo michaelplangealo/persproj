@@ -59,7 +59,7 @@ class Nav extends Component {
         </div>
         <div className="navlink-container">
           <Link className="navtext" to="/">
-            man/of/war
+            man . of . war
           </Link>
           ||
           <Link className="navtext" to="/cart">

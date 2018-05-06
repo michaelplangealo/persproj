@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getProducts } from "../../ducks/productsReducer";
+import { getProducts, filterByProducts } from "../../ducks/productsReducer";
 import { getCart } from "../../ducks/cartReducer.js";
 
 import "./Products.css";
@@ -29,6 +29,24 @@ class Products extends Component {
     return (
       <section>
         <div className="products-page">
+          <div className="title-bar-products">
+            <span>
+              <span className="lochome">
+                <Link to="/"> h o m e .</Link>
+              </span>
+              /
+              <span className="loc">p r o d u c t s .</span>
+            </span>
+            <hr className="title-line" />
+            <span className="filter-bar">
+              <select className="categories-selector">
+                <option />
+                <option value="shirts.">shirts.</option>
+                <option value="shoes.">shoes.</option>
+                <option value="hoodies.">hoodies.</option>
+              </select>
+            </span>
+          </div>
           <div className="products-container">{productsList}</div>
         </div>
       </section>
@@ -44,4 +62,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { getProducts, getCart })(Products);
+export default connect(mapStateToProps, {
+  getProducts,
+  filterByProducts,
+  getCart
+})(Products);

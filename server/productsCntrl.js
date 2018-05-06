@@ -33,5 +33,15 @@ module.exports = {
         res.status(200).json(response);
       })
       .catch(err => res.status(500).json(err));
+  },
+  filterProduct: (req, res, next) => {
+    const dbInstance = req.app.get("db");
+
+    dbInstance
+      .sortByCategory([req.body.category])
+      .then(response => {
+        res.status(200).json(response);
+      })
+      .catch(err => res.status(500).json(err));
   }
 };

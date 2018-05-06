@@ -4,7 +4,6 @@ import { getOneProduct } from "../../ducks/productsReducer";
 import { addToCart, updateCart, getCart } from "../../ducks/cartReducer";
 import "./ProductPage.css";
 import Swal from "sweetalert2";
-import TestMap from "../TestMap/TestMap.js";
 
 class ProductPage extends Component {
   constructor(props) {
@@ -23,13 +22,12 @@ class ProductPage extends Component {
       .then(() => this.setState({ loading: !this.state.loading }));
   }
   addToCart(id, quantity) {
-    const maphtml = "<TestMap/>";
     let index = this.props.cart.findIndex(e => e.product_id == id);
     if (index === -1) {
       this.props
         .addToCart(id, quantity)
         .then(() => this.props.getCart())
-        .then(() => Swal("Good job!", "You clicked the button!", "success"));
+        .then(() => Swal("Bet."));
     } else {
       this.props.updateCart(id, quantity).then(() => this.props.getCart());
     }

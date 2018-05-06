@@ -9,7 +9,7 @@ function About() {
       <div className="about-title-bar">
         <span>
           <a className="lochome">
-            <Link to="/"> h o m e </Link>
+            <Link to="/"> h o m e .</Link>
           </a>
           /
           <span className="loc">a b o u t .</span>
@@ -19,6 +19,12 @@ function About() {
       <div className="about-container">
         <div className="about-text-box">
           <p className="actual-about">
+            <div class="container">
+              <div class="chevron" />
+              <div class="chevron" />
+              <div class="chevron" />
+              <span class="text">Scroll down</span>
+            </div>
             SHANELLE IS REALLY AWESOME Lorem ipsum is a pseudo-Latin text used
             in web design, typography, layout, and printing in place of English
             to emphasise design elements over content. It's also called
