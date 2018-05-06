@@ -29,6 +29,7 @@ class Products extends Component {
     // console.log(products);
     console.log(value);
 
+    // mapping through categories
     const categoryList = products
       .filter(e => {
         console.log(e.category, value);
@@ -45,6 +46,7 @@ class Products extends Component {
         );
       });
 
+    // mapping through products
     const productsList = products.map((e, i) => {
       return (
         <div key={e.id} className="products-cards">
@@ -54,6 +56,8 @@ class Products extends Component {
         </div>
       );
     });
+
+    // rendering products onto screen
     return (
       <section>
         <div className="products-page">
@@ -72,14 +76,15 @@ class Products extends Component {
                 className="categories-selector"
               >
                 <option value="">all products.</option>
-                <option value="shirt">shirts.</option>
+                <option value="shirts">shirts.</option>
                 <option value="shoes">shoes.</option>
-                <option value="hoodie">hoodies.</option>
+                <option value="sweaters">sweaters.</option>
+                <option value="pants">pants.</option>
               </select>
             </span>
           </div>
           {value ? (
-            <div>{categoryList}</div>
+            <div className="products-container">{categoryList}</div>
           ) : (
             <div className="products-container">{productsList}</div>
           )}

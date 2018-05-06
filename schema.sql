@@ -6,7 +6,6 @@ CREATE TABLE products
     secondimg text,
     thirdimg text,
     description varchar(200),
-    9
     price money
 )
     /* */

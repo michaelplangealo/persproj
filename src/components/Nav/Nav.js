@@ -19,7 +19,7 @@ class Nav extends Component {
   render() {
     return (
       <nav className="navigation">
-        <div id="menuToggle">
+        <div onClick={() => this.handleCheck()} id="menuToggle">
           <input
             checked={this.state.toggle}
             onClick={() => this.handleCheck()}
