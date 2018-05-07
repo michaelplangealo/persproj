@@ -77,11 +77,11 @@ passport.deserializeUser((user, done) => {
 app.get(
   `/login`,
   passport.authenticate(`auth0`, {
-    // successRedirect: `http://localhost:3000/#/`,
-    // failureRedirect: "http://localhost:3005/login"
+    successRedirect: `http://localhost:3000/#/`,
+    failureRedirect: "http://localhost:3005/login"
 
-    successRedirect: `/`,
-    failureRedirect: "/login"
+    // successRedirect: `/`,
+    // failureRedirect: "/login"
   })
 );
 

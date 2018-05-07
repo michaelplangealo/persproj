@@ -104,7 +104,7 @@ class Locations extends Component {
                 src="https://cdn.shopify.com/s/files/1/0094/2252/t/110/assets/kith-manhattan.jpg?6304290836930155706"
               />
               <div className="overlay" />
-              <div className="img-text">ARLINGTON</div>
+              <div className="img-text2">ARLINGTON</div>
             </div>
             <Card
               expanded={this.state.expanded}
@@ -193,7 +193,7 @@ class Locations extends Component {
                 src="https://cdn.shopify.com/s/files/1/0094/2252/files/kids_location.png?5547222051476358901"
               />
               <div className="overlay" />
-              <div className="img-text">AMSTERDAM</div>
+              <div className="img-text3">AMSTERDAM</div>
             </div>
             <Card
               expanded={this.state.expanded4}

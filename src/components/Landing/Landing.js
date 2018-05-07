@@ -16,9 +16,13 @@ class Landing extends Component {
     return (
       <div className="landing">
         <div className="landing-title-bar">
-          <span className="landing-home">
-            <Link to="/">.welcome home.</Link>
-          </span>
+          <div className="landing-home">
+            <p className="hiddentext welcome">welcome </p>
+            <Link className="title-link" to="/">
+              .man of war.
+            </Link>
+            <p className="hiddentext welcome">home.</p>
+          </div>
           <hr className="title-line" />
           <p className="hiddentext">
             <p className="firstpart">it's</p>
@@ -33,6 +37,15 @@ class Landing extends Component {
           <video preload="auto" autoPlay loop id="squiddy">
             <source src={squiddy} type="video/mp4" />
           </video>
+        </div>
+        <div className="landing-footer">
+          <hr className="footer-line" />
+          <div className="footer-contents">
+            <p>
+              COUNTRY: UNITED STATES . NEWSLETTER . SIGNUP . CUSTOMER CARE .
+              LOCATIONS . EDITORIAL . ARCHIVE . CAREERS © 2018 manofwar.xyz
+            </p>
+          </div>
         </div>
       </div>
     );

@@ -62,9 +62,29 @@
   font-size: 40px;
   position: absolute;
   top: 50%;
-  left: 48%;
+  left: 50%;
   transform: translate(-50%, -50%);
   letter-spacing: 0.7em;
+  text-align: center;
+}
+.img-text2 {
+  width: 70%;
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 0.5em;
+}
+
+.img-text3 {
+  width: 70%;
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 0.5em;
 }
 .address {
   padding: 30px;

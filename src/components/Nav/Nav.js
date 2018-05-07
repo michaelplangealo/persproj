@@ -30,6 +30,13 @@ class Nav extends Component {
           <div id="menu">
             <Link
               className="menu-link"
+              to="/"
+              onClick={() => this.handleCheck()}
+            >
+              <div className="menu-item">go home.</div>
+            </Link>
+            <Link
+              className="menu-link"
               to="/products"
               onClick={() => this.handleCheck()}
             >
