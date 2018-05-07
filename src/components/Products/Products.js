@@ -4,8 +4,10 @@ import { getProducts, filterByProducts } from "../../ducks/productsReducer";
 import { getCart } from "../../ducks/cartReducer.js";
 import "./Products.css";
 import { Link } from "react-router-dom";
-import topwiggles from "./topwiggles.jpg";
-import bottomwiggles from "./bottomwiggles.jpg";
+import DropDownMenu from "material-ui/DropDownMenu";
+import MenuItem from "material-ui/MenuItem";
+// import topwiggles from "./topwiggles.jpg";
+// import bottomwiggles from "./bottomwiggles.jpg";
 
 class Products extends Component {
   constructor(props) {
@@ -19,9 +21,12 @@ class Products extends Component {
     this.props.getCart();
     // console.log(this.props);
   }
-  handleFilter(selected) {
-    this.setState({ value: selected });
-  }
+  // handleFilter(selected) {
+  //   console.log(selected);
+  //   this.setState({ value: selected });
+  // }
+
+  handleChange = (event, index, value) => this.setState({ value });
 
   render() {
     const { products, category } = this.props;
@@ -70,7 +75,7 @@ class Products extends Component {
               <span className="loc">p r o d u c t s .</span>
             </span>
             <hr className="title-line" />
-            <span className="filter-bar">
+            {/* <span className="filter-bar">
               <select
                 onChange={e => this.handleFilter(e.target.value)}
                 className="categories-selector"
@@ -81,7 +86,18 @@ class Products extends Component {
                 <option value="sweaters">sweaters.</option>
                 <option value="pants">pants.</option>
               </select>
-            </span>
+            </span> */}
+            <DropDownMenu
+              value={this.state.value}
+              // onChange={e => this.handleFilter(e.target.value)}
+              onChange={this.handleChange}
+            >
+              <MenuItem value={""} primaryText="all products." />
+              <MenuItem value={"shirts"} primaryText="shirts." />
+              <MenuItem value={"shoes"} primaryText="shoes." />
+              <MenuItem value={"sweaters"} primaryText="sweaters." />
+              <MenuItem value={"pants"} primaryText="pants." />
+            </DropDownMenu>
           </div>
           {value ? (
             <div className="products-container">{categoryList}</div>

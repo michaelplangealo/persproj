@@ -16,5 +16,44 @@
   /* position: fixed; */
   padding: 20px;
   width: 382px;
-  height: 80vh;
+  height: 40vh;
+  font-family: "Yantramanav", sans-serif;
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.parentcontainer {
+  display: flex;
+}
+.product-page-title-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 100;
+  width: 100%;
+  height: 10%;
+  padding-top: 50px;
+}
+.back {
+  padding-right: 25px;
+}
+.lochome-products {
+  padding-left: 30px;
+}
+.quantity-controller {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 26%;
+  height: 10%;
+}
+.minusminus {
+  width: 20px;
+  height: 20px;
+}
+.plusplus {
+  width: 20px;
+  height: 20px;
 }

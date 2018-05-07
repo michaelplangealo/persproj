@@ -40,29 +40,42 @@ class Cart extends Component {
   }
 
   render() {
+    const { cart, total } = this.props;
     // console.log(this.props.total, this.state.finalTotal);
     // console.log(this.props.cart);
-    const { cart, total } = this.props;
     // let tax = total * 0.08125;
     // tax = tax.toFixed(2);
     // let finalTotal = total + tax;
     // finalTotal = finalTotal.toFixed(2);
     const activeCart = cart.map((e, i) => (
-      <div key={i} className="cart-items">
-        <img src={e.firstimg} className="cart-image" />
-        <div className="deets">
-          <p className="cart-item-desc">{e.name}</p>
-          <p className="cart-item-desc">{e.price}</p>
-          <p>{e.quantity}</p>
-          <button onClick={() => this.handleDelete(e.id)}>
-            Remove from cart.
-          </button>
+      <div className="cart-items-content">
+        <div key={i} className="cart-items">
+          <img src={e.firstimg} className="cart-image" />
+          <div className="deets">
+            <p className="cart-item-desc">{e.name}</p>
+            <p className="cart-item-desc">{e.price}</p>
+            <p>{e.quantity}</p>
+            <button onClick={() => this.handleDelete(e.id)}>
+              Remove from cart.
+            </button>
+          </div>
         </div>
       </div>
     ));
     return (
       <div>
-        <section className="cart-page">
+        <div className="cart-page">
+          <div className="cart-page-title-bar">
+            <span className="back">
+              <Link to="/products">
+                <p>&#8592;</p>
+              </Link>
+            </span>
+            /
+            <span className="lochome-products">
+              <Link to="/"> h o m e .</Link>
+            </span>
+          </div>
           {activeCart[0] ? (
             activeCart
           ) : (
@@ -75,7 +88,8 @@ class Cart extends Component {
               </Link>
             </div>
           )}
-        </section>
+        </div>
+        <hr className="and-thats-the-bottom-line" />
         <div className="checkout-box">
           <div className="total-box">total: ${total}</div>
           <div className="tax-box">tax: ${this.state.tax.toFixed(2)}</div>

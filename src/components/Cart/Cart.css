@@ -1,40 +1,39 @@
 .cart-page {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 86vh;
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
+  /* flex-direction: column; */
   flex-wrap: wrap;
   font-family: "Yantramanav", sans-serif;
   font-size: 14px;
+  padding-left: 10vh;
   /* flex-direction: column; */
 }
-.no-cart {
-  width: 100%;
-  height: 90%;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  font-family: "Yantramanav", sans-serif;
-  font-size: 14px;
-  /* flex-direction: column; */
-}
+
 .no-cart-contents {
-  height: 90vh;
+  height: 80%;
   width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background-image: url("cartsquid.jpg");
+  /* z-index: 1000; */
 }
-.cart-page {
+.cart-items-content {
+  height: 80%;
   width: 100%;
-  height: 70vh;
   display: flex;
-  /* flex-direction: column; */
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  font-family: "Yantramanav", sans-serif;
-  font-size: 14px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("cartsquid.jpg");
 }
+.no-cart-contents:hover {
+  color: red;
+}
+
 .cart-items {
   height: 20%;
   width: 20%;
@@ -58,4 +57,25 @@
   align-items: flex-end;
   justify-content: space-between;
   padding-right: 100px;
+  position: absolute;
+  bottom: 0;
+  right: 70px;
+  font-weight: 100;
+}
+.and-thats-the-bottom-line {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  width: 80%;
+}
+.cart-page-title-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 100;
+  width: 100%;
+  height: 10%;
+  padding-top: 50px;
 }
