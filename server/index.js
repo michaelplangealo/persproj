@@ -23,6 +23,7 @@ massive(process.env.CONNECTION_STRING)
   .catch(console.log);
 
 const app = express();
+app.use(express.static(`${__dirname}/../build`));
 
 // session creation
 app.use(
@@ -76,8 +77,11 @@ passport.deserializeUser((user, done) => {
 app.get(
   `/login`,
   passport.authenticate(`auth0`, {
-    successRedirect: `http://localhost:3000/#/`,
-    failureRedirect: "http://localhost:3005/login"
+    // successRedirect: `http://localhost:3000/#/`,
+    // failureRedirect: "http://localhost:3005/login"
+
+    successRedirect: `/`,
+    failureRedirect: "/login"
   })
 );
 
@@ -92,6 +96,10 @@ app.post(`/api/cart/`, cartCntrl.addToCart);
 app.delete(`/api/cart/:id`, cartCntrl.deleteFromCart);
 app.put(`/api/cart`, cartCntrl.updateCart);
 
+const path = require("path");
+app.get("*", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "/../build/index.html"));
+});
 // listening
 const port = process.env.PORT || 3005;
 app.listen(port, () => {
