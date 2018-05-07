@@ -20,6 +20,14 @@ class Landing extends Component {
             <Link to="/">.welcome home.</Link>
           </span>
           <hr className="title-line" />
+          <p className="hiddentext">
+            <p className="firstpart">it's</p>
+            <p className="secondpart"> a strange </p>
+            <p className="thirdpart"> game . </p>
+            <p className="fourthpart"> the only </p>
+            <p className="fifthpart"> winning move </p>
+            <p className="lastpart"> is not to play . </p>
+          </p>
         </div>
         <div className="videobox">
           <video preload="auto" autoPlay loop id="squiddy">
