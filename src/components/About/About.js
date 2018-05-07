@@ -25,17 +25,36 @@ function About() {
               <div class="chevron" />
               <span class="text">Scroll down</span>
             </div>
-            the portuguese man o' war
+            the portuguese man o' war is a marine hydrozoan of the family
+            Physaliidae found in the Atlantic, Indian, and Pacific Oceans. Its
+            venomous long tentacles blah blah blah.<br />
             <br />
-            publication to be made and presented with the actual content still
-            not being ready. Think of a news blog that's filled with content
-            hourly on the day of going live. However, reviewers tend to be
-            distracted by comprehensible content, say, a random text copied from
-            a newspaper or the internet. The are likely to focus on the text,
-            disregarding the layout and its elements. Besides, random text risks
-            to be unintendedly humorous or offensive, an unacceptable risk in
-            corporate environments. Lorem ipsum and its many variants have been
-            employed since the early 1960ies, and quite likely since the
+            the portuguese man o' war is in the same family as jellyfish. they
+            float, look pretty, and sting. what differentiates them from their
+            gelatinous breatheren is the fact they are actually composed of four
+            different several different multicellular organisms which are
+            physiologically integrated, as opposed to being a single
+            multicellular organism. it's many, connected together, to create
+            one.
+            <br />
+            much like our namesake, at man of war, we believe an outfit to be
+            the man of war of the human body. an outfit is composed of several
+            different pieces, but they all come together to create one
+            functional image.
+            <br />
+            and just like a man of war, reactjs is an architectural program,
+            utilizing many different components to make one working app.
+            <br />
+            jellyfish...clothing...making apps...pretty much all the same.
+            <br />publication to be made and presented with the actual content
+            still not being ready. Think of a news blog that's filled with
+            content hourly on the day of going live. However, reviewers tend to
+            be distracted by comprehensible content, say, a random text copied
+            from a newspaper or the internet. The are likely to focus on the
+            text, disregarding the layout and its elements. Besides, random text
+            risks to be unintendedly humorous or offensive, an unacceptable risk
+            in corporate environments. Lorem ipsum and its many variants have
+            been employed since the early 1960ies, and quite likely since the
             sixteenth century. Lorem Ipsum: common examples layout based on
             Lorem Ipsum Most of its text is made up from sections 1.10.32–3 of
             Cicero's De finibus bonorum et malorum (On the Boundaries of Goods
