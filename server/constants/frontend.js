@@ -1,6 +1,6 @@
 const FRONTEND_DEV_URLS = ["http://localhost:3000"];
 
-const FRONTEND_PROD_URLS = ["https://www.manofwar.com", "https://manofwar.com"];
+const FRONTEND_PROD_URLS = ["https://www.manofwar.xyz", "https://manofwar.xyz"];
 
 module.exports =
   process.env.NODE_ENV === "production"
