@@ -8,7 +8,6 @@ import About from "./components/About/About";
 import Locations from "./components/Locations/Locations";
 import ProductPage from "./components/ProductPage/ProductPage";
 import Cart from "./components/Cart/Cart";
-import Login from "./components/Login/Login.js";
 
 export default (
   <Switch>
@@ -18,6 +17,5 @@ export default (
     <Route path="/locations" component={Locations} />
     <Route path="/product/:id" component={ProductPage} />
     <Route path="/cart" component={Cart} />
-    {/* <Route path="/login" component={Login} /> */}
   </Switch>
 );

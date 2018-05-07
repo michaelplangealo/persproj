@@ -3,17 +3,8 @@ import { Link } from "react-router-dom";
 import "./Locations.css";
 import { DeviceLocationDisabled } from "material-ui";
 import CommunicationLocationOn from "material-ui/svg-icons/communication/location-on";
-import Swal from "sweetalert2";
 import RenderToLayer from "material-ui/internal/RenderToLayer";
-import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
-import {
-  Card,
-  CardActions,
-  CardHeader,
-  CardMedia,
-  CardTitle,
-  CardText
-} from "material-ui/Card";
+import { Card, CardHeader, CardText } from "material-ui/Card";
 import DallasMap from "../Maps/DallasMap.js";
 import ArlingtonMap from "../Maps/ArlingtonMap.js";
 import TorontoMap from "../Maps/TorontoMap";

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getCart } from "../../ducks/cartReducer.js";
 import squiddy from "./squiddyviddy.mp4";
 import "./Landing.css";
+import { Link } from "react-router-dom";
 
 class Landing extends Component {
   constructor(props) {
@@ -13,10 +14,18 @@ class Landing extends Component {
   }
   render() {
     return (
-      <div className="videobox">
-        <video preload="auto" autoPlay loop id="squiddy">
-          <source src={squiddy} type="video/mp4" />
-        </video>
+      <div className="landing">
+        <div className="landing-title-bar">
+          <span className="landing-home">
+            <Link to="/">.welcome home.</Link>
+          </span>
+          <hr className="title-line" />
+        </div>
+        <div className="videobox">
+          <video preload="auto" autoPlay loop id="squiddy">
+            <source src={squiddy} type="video/mp4" />
+          </video>
+        </div>
       </div>
     );
   }

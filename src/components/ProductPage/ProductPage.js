@@ -24,12 +24,18 @@ class ProductPage extends Component {
       .then(() => this.setState({ loading: !this.state.loading }));
   }
   addToCart(id, quantity) {
-    let index = this.props.cart.findIndex(e => e.product_id == id);
+    let index = this.props.cart.findIndex(e => e.product_id === id);
     if (index === -1) {
       this.props
         .addToCart(id, quantity)
         .then(() => this.props.getCart())
-        .then(() => Swal("Bet."));
+        .then(() =>
+          Swal({
+            type: "success",
+            title: "that's a bet.",
+            text: "it's gonna look great on you."
+          })
+        );
     } else {
       this.props.updateCart(id, quantity).then(() => this.props.getCart());
     }

@@ -57,6 +57,7 @@ class Products extends Component {
         <div key={e.id} className="products-cards">
           <Link to={`/product/${e.id}`}>
             <img src={e.firstimg} className="products-image" />
+            <div className="product-page-name">{e.name}</div>
           </Link>
         </div>
       );

@@ -49,12 +49,6 @@
   height: 80vh;
   transform: rotate(90deg);
 }
-.container {
-  position: fixed;
-  width: 24px;
-  height: 24px;
-}
-
 .chevron {
   position: fixed;
   width: 28px;

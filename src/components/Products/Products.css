@@ -1,6 +1,7 @@
 .products-page {
   width: 100%;
   height: 200vh;
+  font-family: "Yantramanav", sans-serif;
 }
 .products-container {
   margin: auto 0;
@@ -37,4 +38,7 @@
 }
 .filter-bar {
   padding-bottom: 20px;
+}
+.product-page-name {
+  font-weight: 100;
 }

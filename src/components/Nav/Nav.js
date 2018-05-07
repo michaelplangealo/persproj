@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Nav.css";
-import { stack as Menu } from "react-burger-menu";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 

@@ -19,7 +19,7 @@ function About() {
       <div className="about-container">
         <div className="about-text-box">
           <p className="actual-about">
-            <div class="container">
+            <div class="scrolling">
               <div class="chevron" />
               <div class="chevron" />
               <div class="chevron" />

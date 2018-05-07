@@ -48,8 +48,8 @@ class Cart extends Component {
     // let finalTotal = total + tax;
     // finalTotal = finalTotal.toFixed(2);
     const activeCart = cart.map((e, i) => (
-      <div className="cart-items-content">
-        <div key={i} className="cart-items">
+      <div key={i} className="cart-items">
+        <div className="cart-items-container">
           <img src={e.firstimg} className="cart-image" />
           <div className="deets">
             <p className="cart-item-desc">{e.name}</p>
@@ -66,18 +66,21 @@ class Cart extends Component {
       <div>
         <div className="cart-page">
           <div className="cart-page-title-bar">
-            <span className="back">
-              <Link to="/products">
-                <p>&#8592;</p>
-              </Link>
-            </span>
-            /
-            <span className="lochome-products">
-              <Link to="/"> h o m e .</Link>
-            </span>
+            <div>
+              <span className="back">
+                <Link to="/products">
+                  <p>b a c k t o p r o d u c t s .</p>
+                </Link>
+              </span>
+              /
+              <span className="lochome-products">
+                <Link to="/"> h o m e .</Link>
+              </span>
+            </div>
+            <hr className="title-line" />
           </div>
           {activeCart[0] ? (
-            activeCart
+            <div className="checkout-cart-contents">{activeCart}</div>
           ) : (
             <div className="no-cart-contents">
               <div>your cart is empty.</div>

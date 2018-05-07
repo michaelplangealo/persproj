@@ -1,14 +1,14 @@
-/* .landingimage{
-    width: 100%;
-    height:100%;
-} */
-
+.landing {
+  height: 100vh;
+  width: 100%;
+  font-family: "Yantramanav", sans-serif;
+}
 .videobox {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 70vh;
 }
 
 #squiddy {
@@ -16,4 +16,17 @@
   min-height: 10vh;
   width: 70%;
   height: 80%;
+}
+.landing-title-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 100;
+  width: 100%;
+  height: 20%;
+}
+.landing-home {
+  font-size: 18px;
+  letter-spacing: 1.2em;
 }
