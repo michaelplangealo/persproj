@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Nav.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { getCart } from "../../ducks/cartReducer.js";
 
 class Nav extends Component {
   constructor(props) {
@@ -11,11 +12,15 @@ class Nav extends Component {
       toggle: false
     };
   }
+  componentDidMount() {
+    this.props.getCart();
+  }
 
   handleCheck() {
     this.setState({ toggle: !this.state.toggle });
   }
   render() {
+    console.log(this.props);
     return (
       <nav className="navigation">
         <div onClick={() => this.handleCheck()} id="menuToggle">
@@ -82,4 +87,4 @@ function mapStateToProps(state) {
     ...cartReducer
   };
 }
-export default connect(mapStateToProps)(Nav);
+export default connect(mapStateToProps, { getCart })(Nav);

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getProducts, filterByProducts } from "../../ducks/productsReducer";
-import { getCart } from "../../ducks/cartReducer.js";
 import "./Products.css";
 import { Link } from "react-router-dom";
 import DropDownMenu from "material-ui/DropDownMenu";
@@ -18,7 +17,6 @@ class Products extends Component {
   }
   componentDidMount() {
     this.props.getProducts();
-    this.props.getCart();
     // console.log(this.props);
   }
   // handleFilter(selected) {
@@ -29,7 +27,7 @@ class Products extends Component {
   handleChange = (event, index, value) => this.setState({ value });
 
   render() {
-    const { products, category } = this.props;
+    const { products } = this.props;
     const { value } = this.state;
     // console.log(products);
     console.log(value);
@@ -45,7 +43,11 @@ class Products extends Component {
         return (
           <div key={e.id} className="products-cards">
             <Link to={`/product/${e.id}`}>
-              <img src={e.firstimg} className="products-image" />
+              <img
+                src={e.firstimg}
+                className="products-image"
+                alt="individual product"
+              />
             </Link>
           </div>
         );
@@ -56,7 +58,11 @@ class Products extends Component {
       return (
         <div key={e.id} className="products-cards">
           <Link to={`/product/${e.id}`}>
-            <img src={e.firstimg} className="products-image" />
+            <img
+              src={e.firstimg}
+              className="products-image"
+              alt="individual-products"
+            />
             <div className="product-page-name">{e.name}</div>
           </Link>
         </div>
@@ -121,6 +127,5 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps, {
   getProducts,
-  filterByProducts,
-  getCart
+  filterByProducts
 })(Products);

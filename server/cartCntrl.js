@@ -31,5 +31,8 @@ module.exports = {
       .updateQuantity([req.body.id, req.user.id, req.body.quantity])
       .then(response => res.status(200).json(response));
     // .catch(err => res.status(500).json(err));
+  },
+  getUser: (req, res, next) => {
+    const dbInstance = req.app.get("db");
   }
 };

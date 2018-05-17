@@ -18,12 +18,12 @@ function About() {
       </div>
       <div className="about-container">
         <div className="about-text-box">
-          <p className="actual-about">
-            <div class="scrolling">
-              <div class="chevron" />
-              <div class="chevron" />
-              <div class="chevron" />
-              <span class="text">Scroll down</span>
+          <div className="actual-about">
+            <div className="scrolling">
+              <div className="chevron" />
+              <div className="chevron" />
+              <div className="chevron" />
+              <span className="text">Scroll down</span>
             </div>
             the portuguese man o' war is a marine hydrozoan of the family
             Physaliidae found in the Atlantic, Indian, and Pacific Oceans. Its
@@ -119,7 +119,7 @@ function About() {
             annoyances accepted. The wise man therefore always holds in these
             matters to this principle of selection: he rejects pleasures to
             secure other greater pleasures, or else he endures pains to avoi
-          </p>
+          </div>
         </div>
         <div className="next2u">
           <video preload="auto" autoPlay loop id="purpp">

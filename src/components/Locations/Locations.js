@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Locations.css";
-import { DeviceLocationDisabled } from "material-ui";
 import CommunicationLocationOn from "material-ui/svg-icons/communication/location-on";
-import RenderToLayer from "material-ui/internal/RenderToLayer";
 import { Card, CardHeader, CardText } from "material-ui/Card";
 import DallasMap from "../Maps/DallasMap.js";
 import ArlingtonMap from "../Maps/ArlingtonMap.js";
@@ -58,6 +56,7 @@ class Locations extends Component {
               <img
                 className="locationimage a"
                 src="https://cdn.shopify.com/s/files/1/0094/2252/t/110/assets/location-2.jpg?6304290836930155706"
+                alt="dallas-map"
               />
               <div className="overlay" />
               <div className="img-text"> DALLAS </div>
@@ -102,6 +101,7 @@ class Locations extends Component {
               <img
                 className="locationimage b"
                 src="https://cdn.shopify.com/s/files/1/0094/2252/t/110/assets/kith-manhattan.jpg?6304290836930155706"
+                alt="arlington-map"
               />
               <div className="overlay" />
               <div className="img-text2">ARLINGTON</div>
@@ -147,6 +147,7 @@ class Locations extends Component {
               <img
                 className="locationimage c"
                 src="https://cdn.shopify.com/s/files/1/0094/2252/files/hirshleifers-treats_48f5cd3e-90ca-4825-b366-22276a51eac1.jpg?6304290836930155706"
+                alt="toronto-map"
               />
               <div className="overlay" />
               <div className="img-text">TORONTO</div>
@@ -191,6 +192,7 @@ class Locations extends Component {
               <img
                 className="locationimage d"
                 src="https://cdn.shopify.com/s/files/1/0094/2252/files/kids_location.png?5547222051476358901"
+                alt="amsterdam-map"
               />
               <div className="overlay" />
               <div className="img-text3">AMSTERDAM</div>

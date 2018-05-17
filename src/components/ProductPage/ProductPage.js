@@ -42,11 +42,15 @@ class ProductPage extends Component {
     // console.log("Hit");
   }
   toIncrement() {
-    this.setState({ quantity: ++this.state.quantity });
+    let { quantity } = this.state;
+    ++quantity;
+    this.setState({ quantity: quantity });
     // console.log(this.state.quantity);
   }
   toDecrement() {
-    this.setState({ quantity: --this.state.quantity });
+    let { quantity } = this.state;
+    --quantity;
+    this.setState({ quantity: quantity });
     // console.log(this.state.quantity);
   }
 
@@ -54,7 +58,6 @@ class ProductPage extends Component {
     // this is all legitimatelly for mapping through your products. all of the styling here could have been done in the actual return. this is all done in the return of the map statement. go over this, learn to make it a bit less messy.
     const { quantity } = this.state;
     const { currentProduct } = this.props;
-    const { addToCart } = this.props;
     const selectedProduct = currentProduct.map((e, i) => {
       return (
         <div key={e.id} className="product">
@@ -63,9 +66,21 @@ class ProductPage extends Component {
           ) : (
             <div className="parentcontainer">
               <div className="products-img-container">
-                <img src={e.firstimg} className="product-page-image" />
-                <img src={e.secondimg} className="product-page-image" />
-                <img src={e.thirdimg} className="product-page-image" />
+                <img
+                  src={e.firstimg}
+                  className="product-page-image"
+                  alt="first"
+                />
+                <img
+                  src={e.secondimg}
+                  className="product-page-image"
+                  alt="second"
+                />
+                <img
+                  src={e.thirdimg}
+                  className="product-page-image"
+                  alt="third"
+                />
               </div>
               <div className="product-description">
                 <div>{e.name}</div>
@@ -88,7 +103,7 @@ class ProductPage extends Component {
                   </button>
                 </div>
                 <RaisedButton
-                  label="gimme that shit."
+                  label="i want you and i need you."
                   onClick={() => this.addToCart(e.id, quantity)}
                 />
               </div>

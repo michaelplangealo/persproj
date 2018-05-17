@@ -4,7 +4,6 @@ import axios from "axios";
 const initialState = {
   cart: [],
   total: 0
-  // finalTotal: 0
 };
 
 // action types
@@ -13,7 +12,6 @@ const ADD_TO_CART = "ADD_TO_CART";
 const DELETE_FROM_CART = "DELETE_FROM_CART";
 const GET_CART_TOTAL = "GET_CART_TOTAL";
 const UPDATE_CART = "UPDATE_CART";
-// const UPDATE_TOTAL = "UPDATE_TOTAL";
 
 // action creators
 export function getCart() {
@@ -48,13 +46,6 @@ export function updateCart(id, quantity) {
   };
 }
 
-// export function updateTotal(total) {
-//   return {
-//     type: UPDATE_TOTAL,
-//     payload: total
-//   };
-// }
-
 // reducer function
 export default function cartReducer(state = initialState, action) {
   switch (action.type) {
@@ -67,6 +58,7 @@ export default function cartReducer(state = initialState, action) {
       let total = 0;
       action.payload.data.map((e, i) => {
         total += Number(e.price.slice(1)) * e.quantity;
+        return total;
       });
       // console.log("TOTAL: ", total);
       return Object.assign({}, state, { total: total });

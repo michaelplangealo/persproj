@@ -50,7 +50,11 @@ class Cart extends Component {
     const activeCart = cart.map((e, i) => (
       <div key={i} className="cart-items">
         <div className="cart-items-container">
-          <img src={e.firstimg} className="cart-image" />
+          <img
+            src={e.firstimg}
+            className="cart-image"
+            alt="whats-in-the-caaarrrtt"
+          />
           <div className="deets">
             <p className="cart-item-desc">{e.name}</p>
             <p className="cart-item-desc">{e.price}</p>

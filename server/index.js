@@ -77,11 +77,11 @@ passport.deserializeUser((user, done) => {
 app.get(
   `/login`,
   passport.authenticate(`auth0`, {
-    // successRedirect: `http://localhost:3000/#/`,
-    // failureRedirect: "http://localhost:3005/login"
+    successRedirect: `http://localhost:3000/#/`,
+    failureRedirect: "http://localhost:3005/login"
 
-    successRedirect: `/`,
-    failureRedirect: "/login"
+    // successRedirect: `/`,
+    // failureRedirect: "/login"
   })
 );
 
@@ -95,6 +95,9 @@ app.get(`/api/cart`, cartCntrl.getCart);
 app.post(`/api/cart/`, cartCntrl.addToCart);
 app.delete(`/api/cart/:id`, cartCntrl.deleteFromCart);
 app.put(`/api/cart`, cartCntrl.updateCart);
+
+// endpoint for checking if there's a user.
+// app.get(`/api/user`, cartCntrl.getUser)
 
 const path = require("path");
 app.get("*", (req, res, next) => {
