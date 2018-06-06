@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Nav.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { getCart } from "../../ducks/cartReducer.js";
+import { getCart, getUser } from "../../ducks/cartReducer.js";
 
 class Nav extends Component {
   constructor(props) {
@@ -13,7 +13,9 @@ class Nav extends Component {
     };
   }
   componentDidMount() {
-    this.props.getCart();
+    if (this.props.getUser) {
+      this.props.getCart();
+    }
   }
 
   handleCheck() {
@@ -87,4 +89,4 @@ function mapStateToProps(state) {
     ...cartReducer
   };
 }
-export default connect(mapStateToProps, { getCart })(Nav);
+export default connect(mapStateToProps, { getCart, getUser })(Nav);

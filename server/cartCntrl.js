@@ -34,5 +34,10 @@ module.exports = {
   },
   getUser: (req, res, next) => {
     const dbInstance = req.app.get("db");
+
+    dbInstance
+      .getCustomer(req.user.id)
+      .then(response => res.status(200).json(response))
+      .catch(err => res.status(500).json(err));
   }
 };

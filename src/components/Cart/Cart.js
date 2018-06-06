@@ -105,7 +105,7 @@ class Cart extends Component {
           </div>
           <p>
             <Checkout
-              name={"SWAAAAAGGGEEERRRRRR"}
+              name={"nice!"}
               description={"Who needs to pay rent when you have clothes"}
               amount={Number(this.state.finalTotal.toFixed(2))}
             />
@@ -123,8 +123,11 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, {
-  getCart,
-  deleteFromCart,
-  getCartTotal
-})(Cart);
+export default connect(
+  mapStateToProps,
+  {
+    getCart,
+    deleteFromCart,
+    getCartTotal
+  }
+)(Cart);

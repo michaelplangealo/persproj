@@ -3,7 +3,8 @@ import axios from "axios";
 // initial state
 const initialState = {
   cart: [],
-  total: 0
+  total: 0,
+  userid: {}
 };
 
 // action types
@@ -12,6 +13,7 @@ const ADD_TO_CART = "ADD_TO_CART";
 const DELETE_FROM_CART = "DELETE_FROM_CART";
 const GET_CART_TOTAL = "GET_CART_TOTAL";
 const UPDATE_CART = "UPDATE_CART";
+const GET_USER = "GET_USER";
 
 // action creators
 export function getCart() {
@@ -45,6 +47,12 @@ export function updateCart(id, quantity) {
     payload: axios.put(`/api/cart`, { id, quantity })
   };
 }
+export function getUser(id) {
+  return {
+    type: GET_USER,
+    payload: axios.get(`/api/user`, { id })
+  };
+}
 
 // reducer function
 export default function cartReducer(state = initialState, action) {
@@ -60,11 +68,13 @@ export default function cartReducer(state = initialState, action) {
         total += Number(e.price.slice(1)) * e.quantity;
         return total;
       });
-      // console.log("TOTAL: ", total);
+      console.log("TOTAL: ", total);
       return Object.assign({}, state, { total: total });
     // const total = action.payload.reduce((acc, curr) => acc + curr.price);
+    case `${GET_USER}_FULFILLED`:
+      console.log("default hit");
+      return Object.assign({}, state, { userid: action.payload.data });
     default:
-      // console.log("default hit");
       return state;
   }
 }

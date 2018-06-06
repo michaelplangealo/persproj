@@ -97,7 +97,7 @@ app.delete(`/api/cart/:id`, cartCntrl.deleteFromCart);
 app.put(`/api/cart`, cartCntrl.updateCart);
 
 // endpoint for checking if there's a user.
-// app.get(`/api/user`, cartCntrl.getUser)
+app.get(`/api/user`, cartCntrl.getUser);
 
 const path = require("path");
 app.get("*", (req, res, next) => {
