@@ -32,7 +32,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      maxAge: 100000
+      maxAge: 1000000
     }
   })
 );
@@ -104,7 +104,7 @@ app.get("*", (req, res, next) => {
   res.sendFile(path.join(__dirname, "/../build/index.html"));
 });
 // listening
-const port = process.env.PORT || 3005;
+const port = 3005;
 app.listen(port, () => {
   console.log(`here 4 u @ ${port}`);
 });

@@ -35,39 +35,44 @@ class Nav extends Component {
           <span />
           <span />
           <div id="menu">
-            <Link
-              className="menu-link"
-              to="/"
-              onClick={() => this.handleCheck()}
-            >
-              <div className="menu-item">go home.</div>
-            </Link>
-            <Link
-              className="menu-link"
-              to="/products"
-              onClick={() => this.handleCheck()}
-            >
-              <div className="menu-item">products.</div>
-            </Link>
-            <Link
-              className="menu-link"
-              to="/about"
-              onClick={() => this.handleCheck()}
-            >
-              <div className="menu-item">about.</div>
-            </Link>
-            <Link
-              className="menu-link"
-              to="/locations"
-              onClick={() => this.handleCheck()}
-            >
-              <div className="menu-item">locations.</div>
-            </Link>
-            <a href={process.env.REACT_APP_LOGIN} className="menu-link">
-              <div onClick={() => this.closeHamburger()} className="menu-item1">
-                login.
-              </div>
-            </a>
+            <div className="menu-item-container">
+              <Link
+                className="menu-link"
+                to="/"
+                onClick={() => this.handleCheck()}
+              >
+                <div className="menu-item">go home.</div>
+              </Link>
+              <Link
+                className="menu-link"
+                to="/products"
+                onClick={() => this.handleCheck()}
+              >
+                <div className="menu-item">products.</div>
+              </Link>
+              <Link
+                className="menu-link"
+                to="/about"
+                onClick={() => this.handleCheck()}
+              >
+                <div className="menu-item">about.</div>
+              </Link>
+              <Link
+                className="menu-link"
+                to="/locations"
+                onClick={() => this.handleCheck()}
+              >
+                <div className="menu-item">locations.</div>
+              </Link>
+              <a href={process.env.REACT_APP_LOGIN} className="menu-link">
+                <div
+                  onClick={() => this.closeHamburger()}
+                  className="menu-item"
+                >
+                  login.
+                </div>
+              </a>
+            </div>
           </div>
         </div>
         <div className="navlink-container">
@@ -89,4 +94,7 @@ function mapStateToProps(state) {
     ...cartReducer
   };
 }
-export default connect(mapStateToProps, { getCart, getUser })(Nav);
+export default connect(
+  mapStateToProps,
+  { getCart, getUser }
+)(Nav);

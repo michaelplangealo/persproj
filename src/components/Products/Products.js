@@ -5,8 +5,6 @@ import "./Products.css";
 import { Link } from "react-router-dom";
 import DropDownMenu from "material-ui/DropDownMenu";
 import MenuItem from "material-ui/MenuItem";
-// import topwiggles from "./topwiggles.jpg";
-// import bottomwiggles from "./bottomwiggles.jpg";
 
 class Products extends Component {
   constructor(props) {
@@ -19,10 +17,6 @@ class Products extends Component {
     this.props.getProducts();
     // console.log(this.props);
   }
-  // handleFilter(selected) {
-  //   console.log(selected);
-  //   this.setState({ value: selected });
-  // }
 
   handleChange = (event, index, value) => this.setState({ value });
 
@@ -71,18 +65,17 @@ class Products extends Component {
 
     // rendering products onto screen
     return (
-      <section>
-        <div className="products-page">
-          <div className="title-bar-products">
-            <span>
-              <span className="lochome">
-                <Link to="/"> h o m e .</Link>
-              </span>
-              /
-              <span className="loc">p r o d u c t s .</span>
+      <div className="products-page">
+        <div className="title-bar-products">
+          <span>
+            <span className="lochome">
+              <Link to="/"> h o m e .</Link>
             </span>
-            <hr className="title-line" />
-            {/* <span className="filter-bar">
+            /
+            <span className="loc">p r o d u c t s .</span>
+          </span>
+          <hr className="title-line" />
+          {/* <span className="filter-bar">
               <select
                 onChange={e => this.handleFilter(e.target.value)}
                 className="categories-selector"
@@ -94,25 +87,24 @@ class Products extends Component {
                 <option value="pants">pants.</option>
               </select>
             </span> */}
-            <DropDownMenu
-              value={this.state.value}
-              // onChange={e => this.handleFilter(e.target.value)}
-              onChange={this.handleChange}
-            >
-              <MenuItem value={""} primaryText="all products." />
-              <MenuItem value={"shirts"} primaryText="shirts." />
-              <MenuItem value={"shoes"} primaryText="shoes." />
-              <MenuItem value={"sweaters"} primaryText="sweaters." />
-              <MenuItem value={"pants"} primaryText="pants." />
-            </DropDownMenu>
-          </div>
-          {value ? (
-            <div className="products-container">{categoryList}</div>
-          ) : (
-            <div className="products-container">{productsList}</div>
-          )}
+          <DropDownMenu
+            value={this.state.value}
+            // onChange={e => this.handleFilter(e.target.value)}
+            onChange={this.handleChange}
+          >
+            <MenuItem value={""} primaryText="all products." />
+            <MenuItem value={"shirts"} primaryText="shirts." />
+            <MenuItem value={"shoes"} primaryText="shoes." />
+            <MenuItem value={"sweaters"} primaryText="sweaters." />
+            <MenuItem value={"pants"} primaryText="pants." />
+          </DropDownMenu>
         </div>
-      </section>
+        {value ? (
+          <div className="products-container">{categoryList}</div>
+        ) : (
+          <div className="products-container">{productsList}</div>
+        )}
+      </div>
     );
   }
 }
@@ -125,7 +117,10 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, {
-  getProducts,
-  filterByProducts
-})(Products);
+export default connect(
+  mapStateToProps,
+  {
+    getProducts,
+    filterByProducts
+  }
+)(Products);

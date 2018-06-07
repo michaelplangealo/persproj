@@ -3,7 +3,7 @@ let totalPrice = [];
 module.exports = {
   getCart: (req, res, next) => {
     const dbInstance = req.app.get("db");
-
+    console.log("right here", req.user.id);
     dbInstance.getCart(req.user.id).then(response => {
       // console.log(response);
       res.status(200).json(response);
